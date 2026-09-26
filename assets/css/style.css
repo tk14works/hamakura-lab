@@ -149,6 +149,11 @@ h3 { font-weight: 750; }
 .news-detail h1 { max-width: 760px; margin-bottom: 10px; overflow-wrap: anywhere; color: var(--ink); font-size: clamp(2.15rem, 4.4vw, 4.4rem); }
 .news-detail__image { width: min(100%, 460px); margin: 0 auto 22px; }
 .news-detail__image img { display: block; width: 100%; height: auto; border-radius: 18px; box-shadow: 0 12px 28px rgba(20, 92, 57, .12); }
+.news-detail__copy { max-width: 680px; margin: 0 auto; line-height: 1.8; text-align: center; }
+.news-detail__copy p { margin: 0; }
+.news-detail__copy p + p { margin-top: 10px; }
+.news-detail__mobile-break { display: none; }
+.news-detail__copy + .news-detail__about { margin-top: 24px; }
 .news-detail__about { display: flex; width: fit-content; margin: 36px auto 0; }
 .news-detail__back { display: inline-flex; gap: 10px; margin-top: 44px; padding-bottom: 4px; border-bottom: 1px solid var(--deep-green); color: var(--deep-green); font-size: .85rem; font-weight: 900; }
 .news-detail__back:hover { color: var(--green); }
@@ -182,7 +187,8 @@ h3 { font-weight: 750; }
 .tsunagu-info-list li { padding-bottom: 16px; border-bottom: 1px solid rgba(16, 35, 29, .24); }
 .tsunagu-access-image { width: min(100%, 540px); margin: 40px auto 0; }
 .tsunagu-access-image img { display: block; width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow); }
-.tsunagu-back-to-top { display: flex; align-items: center; justify-content: center; gap: 9px; width: fit-content; min-height: 46px; margin: 38px auto 0; padding: 0 22px; border: 1px solid var(--deep-green); border-radius: 999px; color: var(--deep-green); font-size: .88rem; font-weight: 900; }
+.tsunagu-page-actions { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 38px auto 0; }
+.tsunagu-back-to-top { display: flex; align-items: center; justify-content: center; gap: 9px; width: fit-content; min-height: 46px; margin: 0; padding: 0 22px; border: 1px solid var(--deep-green); border-radius: 999px; color: var(--deep-green); font-size: .88rem; font-weight: 900; }
 .tsunagu-back-to-top:hover { background: var(--deep-green); color: #fff; }
 
 .intro__heading h2 { margin-bottom: 24px; font-size: clamp(1.75rem, 3.2vw, 2.8rem); }
@@ -399,8 +405,9 @@ details p { max-width: 100%; margin: -5px 0 22px; color: var(--muted); font-size
   .news-detail { min-height: calc(100vh - 192px); padding-top: 32px; }
   .news-detail h1 { margin-bottom: 10px; font-size: clamp(1.9rem, 8.6vw, 2.45rem); }
   .news-detail__date { margin-bottom: 24px; text-align: left; }
-  .news-detail__image { width: min(100%, 360px); margin-bottom: 18px; }
+  .news-detail__image { width: min(100%, 360px); margin-bottom: 32px; }
   .news-detail__about { margin-top: 28px; }
+  .news-detail__copy + .news-detail__about { margin-top: 22px; }
   .news-detail__back { margin-top: 32px; }
   .tsunagu-section h1, .tsunagu-section h2 { font-size: clamp(1.8rem, 8vw, 2.3rem); }
   .tsunagu-section p { font-size: .98rem; }
@@ -412,7 +419,9 @@ details p { max-width: 100%; margin: -5px 0 22px; color: var(--muted); font-size
   .tsunagu-people-grid { grid-template-columns: 1fr; gap: 16px; }
   .tsunagu-people-grid section { padding: 24px 20px; }
   .tsunagu-access-image { margin-top: 32px; }
-  .tsunagu-back-to-top { margin-top: 30px; }
+  .tsunagu-page-actions { gap: 8px; margin-top: 30px; }
+  .tsunagu-back-to-top { padding-inline: 14px; font-size: .8rem; }
+  .tsunagu-open-day-link { padding-inline: 10px; }
   .intro__heading h2 { font-size: clamp(1.35rem, 7vw, 1.75rem); letter-spacing: -.045em; }
   .section-heading h2 { font-size: 1.9rem; }
   .people .section-heading h2 { font-size: clamp(1.45rem, 7.2vw, 1.9rem); letter-spacing: -.045em; }
@@ -446,6 +455,7 @@ details p { max-width: 100%; margin: -5px 0 22px; color: var(--muted); font-size
 }
 
 @media (max-width: 639px) {
+  .news-detail__mobile-break { display: initial; }
   .final-cta__inner > p:not(.section-label) { font-size: .9rem; letter-spacing: -.02em; }
   .contact-copy-break { display: block; }
   .intro__cards { gap: 14px; }
